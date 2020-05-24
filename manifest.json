@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Auto LogOut",
+  "description": "This extension improves your privacy and data protection by automatically logging you out of website you configure on desired conditions(i.e browser restart, tab close etc)",
+  "version": "0.0.1",
+  "icons": {
+    "64": "icons/icon.png"
+  },
+  "background": {
+    "scripts": [
+      "background_script.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.mozilla.org/*"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "64": "icons/icon.png"
+    },
+    "default_popup": "browserAction/index.html",
+    "default_title": "Auto LogOut"
+  },
+  "options_ui": {
+    "page": "options/index.html"
+  }
+}
